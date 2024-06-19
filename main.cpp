@@ -6,19 +6,6 @@ using namespace std;
 
 
 
-void inputArray(int* arr, int size) {
-    for (int i = 0; i < size; ++i) {
-        cin >> arr[i];
-    }
-}
-
-void printArray(const int* arr, int size) {
-    for (int i = 0; i < size; ++i) {
-        cout << arr[i] << " ";
-    }
-    cout << endl;
-}
-
 bool contains(const int* arr, int size, int elem) {
     for (int i = 0; i < size; ++i) {
         if (arr[i] == elem) {
@@ -50,16 +37,39 @@ int main() {
     int* B = new int[N];
     int* C = new int[M]; 
 
-    cout << "Enter elements of array A: ";
-    inputArray(A, M);
+    for (size_t i = 0; i < M; i++)
+    {
+        A[i] = rand() % 15;
+    }
 
-    cout << "Enter elements of array B: ";
-    inputArray(B, N);
+    for (size_t i = 0; i < N; i++)
+    {
+        B[i] = rand() % 15;
+    }
+
+
+    cout << "Array1: ";
+    for (size_t i = 0; i < M; i++)
+    {
+        cout << A[i] << " ";
+    }
+    cout << endl;
+
+    cout << "Array2: ";
+    for (size_t i = 0; i < N; i++)
+    {
+        cout << B[i] << " ";
+    }
+    cout << endl;
 
     int sizeC = uniqueElementsAWithoutB(A, M, B, N, C);
 
     cout << "Unique elements in A not in B: ";
-    printArray(C, sizeC);
+    for (size_t i = 0; i < sizeC; i++)
+    {
+        cout << C[i] << " ";
+    }
+    cout << endl;
 
     delete[] A;
     delete[] B;
