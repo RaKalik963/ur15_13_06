@@ -31,9 +31,11 @@ int uniqueElementsAandB(const int* A, int M, const int* B, int N, int* C) {
     return k;
 }
 
-int main() {
-    int M, N;
+int main() 
+{
+    srand(time(0));
 
+    int M, N;
     cout << "Enter the size of array A: ";
     cin >> M;
     cout << "Enter the size of array B: ";
